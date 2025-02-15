@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  scira:
+    build:
+      context: .
+      dockerfile: e2b.Dockerfile
+    environment:
+      - NODE_ENV=production
+    ports:
+      - "3133:3000"
+    networks:
+      - caddy_default
+
+networks:
+  caddy_default:
+    external: true
